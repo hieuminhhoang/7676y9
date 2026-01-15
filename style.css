@@ -38,31 +38,52 @@ body::before{
 .card{
   position:relative;
   width:390px;
-  padding:44px 36px;
+  padding:46px 38px;
   text-align:center;
 
-  background:rgba(60,75,85,.78);
-  backdrop-filter:blur(14px);
-  border-radius:28px;
+  /* KÍNH MỜ ĐỤC */
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.18),
+      rgba(255,255,255,0.08)
+    );
+  backdrop-filter: blur(22px) saturate(120%);
+  -webkit-backdrop-filter: blur(22px) saturate(120%);
 
-  box-shadow:0 35px 80px rgba(0,0,0,.75);
+  border-radius:30px;
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,.45),
+    inset 0 0 0 1px rgba(255,255,255,.12);
+
   opacity:0;
   animation:cardIn 1s cubic-bezier(.2,.8,.2,1) 2s forwards;
 }
+
 
 /* ===== BORDER GOLD ===== */
 .card::before{
   content:"";
   position:absolute;
   inset:0;
-  border-radius:28px;
-  padding:1.5px;
-  background:linear-gradient(135deg,#ffd36a,#ffcc33,#ffd36a);
+  border-radius:30px;
+  padding:1.4px;
+  pointer-events:none;
+
+  background:linear-gradient(
+    135deg,
+    rgba(255,215,0,.8),
+    rgba(255,215,0,.25),
+    rgba(255,215,0,.6)
+  );
+
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
   -webkit-mask-composite:xor;
 }
+
 /* ================= TEXT ================= */
 .subtitle{
   font-family:'Montserrat',sans-serif;
@@ -217,6 +238,7 @@ h1{
   0%,100%{text-shadow:0 0 8px rgba(255,215,0,.4);}
   50%{text-shadow:0 0 18px rgba(255,215,0,.85);}
 }
+
 
 
 
