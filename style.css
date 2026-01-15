@@ -38,36 +38,27 @@ body::before{
 .card{
   position:relative;
   width:390px;
-  padding:44px 36px;
+  padding:46px 38px;
   text-align:center;
 
-  background:rgba(60,75,85,.78);
-  backdrop-filter:blur(14px);
-  border-radius:28px;
+  /* KÍNH MỜ ĐỤC */
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.18),
+      rgba(255,255,255,0.08)
+    );
+  backdrop-filter: blur(22px) saturate(120%);
+  -webkit-backdrop-filter: blur(22px) saturate(120%);
 
-  box-shadow:0 35px 80px rgba(0,0,0,.75);
-  opacity:0;
-  animation:cardIn 1s cubic-bezier(.2,.8,.2,1) 2s forwards;
-}
+  border-radius:30px;
 
-/* ===== BORDER GOLD ===== */
-.card{
-  position:relative;
-  width:390px;
-  padding:44px 36px;
-  text-align:center;
-
-  background:rgba(90,105,115,.78);
-  backdrop-filter:blur(16px);
-  border-radius:28px;
-
-  box-shadow:0 35px 80px rgba(0,0,0,.75);
+  box-shadow:
+    0 30px 70px rgba(0,0,0,.45),
+    inset 0 0 0 1px rgba(255,255,255,.12);
 
   opacity:0;
   animation:cardIn 1s cubic-bezier(.2,.8,.2,1) 2s forwards;
-
-  /* FIX LỆCH */
-  transform-origin:center;
 }
 
 /* ================= TEXT ================= */
@@ -224,4 +215,5 @@ h1{
   0%,100%{text-shadow:0 0 8px rgba(255,215,0,.4);}
   50%{text-shadow:0 0 18px rgba(255,215,0,.85);}
 }
+
 
