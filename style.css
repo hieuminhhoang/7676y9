@@ -15,7 +15,7 @@ body{
 
   background:
     linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.75)),
-    background-image: url("./bg.jpg");
+    url("./bg.jpg");
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
@@ -26,7 +26,7 @@ body::before{
   content:"";
   position:fixed;
   inset:0;
-  z-index:9999;
+  z-index:3;
   pointer-events:none;
 
   background:
@@ -41,6 +41,7 @@ body::before{
 /* ================= CARD ================= */
 .card{
   position:relative;
+  z-index:2;
   width:390px;
   padding:44px 36px;
   text-align:center;
@@ -80,14 +81,6 @@ body::before{
 }
 
 /* ================= TEXT ================= */
-.cap{
-  font-size:32px;
-  margin-bottom:10px;
-  font-style:italic;
-  color:#ffd700;
-  animation:floatText 4s ease-in-out infinite;
-}
-
 .subtitle{
   font-family:'Montserrat', sans-serif;
   font-size:13px;
@@ -104,7 +97,6 @@ h1{
   font-weight:600;
 }
 
-/* ===== CHỮ VÀNG LUNG LINH (KHÔNG CHẠY) ===== */
 .gold{
   background:linear-gradient(
     120deg,
@@ -114,7 +106,6 @@ h1{
   );
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-
   animation:goldPulse 3.5s ease-in-out infinite;
 }
 
@@ -126,7 +117,6 @@ h1{
   background:linear-gradient(90deg,#f5c16c,#fff);
 }
 
-/* ===== TÊN – VIẾT TAY – BAY NHẸ ===== */
 .name{
   font-family:'Dancing Script', cursive;
   font-size:26px;
@@ -169,6 +159,58 @@ h1{
   opacity:.9;
 }
 
+/* ================= DECOR ================= */
+.decor{
+  position:fixed;
+  pointer-events:none;
+  z-index:1;
+}
+
+.balloon{
+  width:120px;
+  opacity:.9;
+  animation:floatDecor 6s ease-in-out infinite;
+}
+
+.balloon.left{
+  left:6%;
+  top:22%;
+}
+
+.balloon.right{
+  right:6%;
+  top:22%;
+  animation-delay:2s;
+}
+
+.cap{
+  width:90px;
+  opacity:.9;
+}
+
+.cap-left{
+  left:8%;
+  bottom:10%;
+  transform:rotate(-18deg);
+}
+
+.cap-right{
+  right:8%;
+  bottom:12%;
+  transform:rotate(15deg);
+}
+
+.confetti{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:.18;
+  z-index:0;
+  animation:fadeConfetti 5s ease-in-out infinite;
+}
+
 /* ================= ANIMATION ================= */
 @keyframes introFade{
   0%{opacity:1;}
@@ -187,17 +229,11 @@ h1{
   }
 }
 
-/* ===== CHỮ BAY BAY ===== */
 @keyframes floatText{
-  0%,100%{
-    transform:translateY(0);
-  }
-  50%{
-    transform:translateY(-6px);
-  }
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-6px); }
 }
 
-/* ===== PHÁT SÁNG NHẸ ===== */
 @keyframes goldPulse{
   0%,100%{
     text-shadow:0 0 10px rgba(255,215,0,.4);
@@ -215,57 +251,7 @@ h1{
     text-shadow:0 0 18px rgba(255,215,0,.85);
   }
 }
-/* ================= DECOR ================= */
-.decor{
-  position:absolute;
-  pointer-events:none;
-  z-index:0;
-}
 
-.balloon{
-  width:120px;
-  opacity:.9;
-  animation:floatDecor 6s ease-in-out infinite;
-}
-
-.balloon.left{
-  left:5%;
-  top:15%;
-}
-
-.balloon.right{
-  right:5%;
-  top:20%;
-  animation-delay:2s;
-}
-
-.cap{
-  width:90px;
-  opacity:.9;
-}
-
-.cap-left{
-  left:10%;
-  bottom:15%;
-  transform:rotate(-15deg);
-}
-
-.cap-right{
-  right:10%;
-  bottom:18%;
-  transform:rotate(12deg);
-}
-
-.confetti{
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:.15;
-  animation:fadeConfetti 5s ease-in-out infinite;
-}
-
-/* ================= ANIMATION ================= */
 @keyframes floatDecor{
   0%,100%{ transform:translateY(0); }
   50%{ transform:translateY(-18px); }
@@ -275,11 +261,3 @@ h1{
   0%,100%{ opacity:.12; }
   50%{ opacity:.22; }
 }
-
-
-
-
-
-
-
-
