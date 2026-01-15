@@ -51,17 +51,23 @@ body::before{
 }
 
 /* ===== BORDER GOLD ===== */
-.card::before{
-  content:"";
-  position:absolute;
-  inset:0;
+.card{
+  position:relative;
+  width:390px;
+  padding:44px 36px;
+  text-align:center;
+
+  background:rgba(90,105,115,.78);
+  backdrop-filter:blur(16px);
   border-radius:28px;
-  padding:1.5px;
-  background:linear-gradient(135deg,#ffd36a,#ffcc33,#ffd36a);
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite:xor;
+
+  box-shadow:0 35px 80px rgba(0,0,0,.75);
+
+  opacity:0;
+  animation:cardIn 1s cubic-bezier(.2,.8,.2,1) 2s forwards;
+
+  /* FIX LỆCH */
+  transform-origin:center;
 }
 
 /* ================= TEXT ================= */
@@ -111,29 +117,43 @@ h1{
 .info{
   display:flex;
   justify-content:space-between;
+  align-items:center;   /* FIX */
   margin-bottom:16px;
 }
 
 .info div{
   width:30%;
+  text-align:center;    /* FIX */
 }
 
 .info small{
   font-family:'Montserrat',sans-serif;
   font-size:11px;
-  color:#ccc;
+  letter-spacing:1.5px;
+  color:#ddd;
 }
 
 .info strong{
   display:block;
-  color:#fff;
+  margin-top:6px;
   font-size:18px;
+  font-weight:500;
+  color:#fff;
 }
-
 .place{
+  margin-top:6px;
   font-size:14px;
   color:#eee;
+  opacity:.9;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:6px;
+
+  line-height:1.2;
 }
+
 
 /* ================= DECOR ================= */
 .decor{
@@ -204,3 +224,4 @@ h1{
   0%,100%{text-shadow:0 0 8px rgba(255,215,0,.4);}
   50%{text-shadow:0 0 18px rgba(255,215,0,.85);}
 }
+
